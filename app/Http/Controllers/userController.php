@@ -9,5 +9,6 @@ class userController extends Controller
     public function index()
     {
     	echo "越努力越幸运";
+    	echo "string";
     }
 }
