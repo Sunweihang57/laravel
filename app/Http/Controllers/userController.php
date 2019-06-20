@@ -28,11 +28,11 @@ class userController extends Controller
     	$data=Requset::except('_token','s_id');
     	// dd($data);die;
     	$res=DB::table('student')->insert($data);
-    	if (!empty($res)) {
-    		return redirect('/list');
-    	}else{
-    		return redirect('/user');
-    	}
+    	// if (!empty($res)) {
+    	// 	return redirect('/list');
+    	// }else{
+    	// 	return redirect('/user');
+    	// }
     }
 
     /**列表展示*/

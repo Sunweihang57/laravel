@@ -16,10 +16,12 @@ class LoginController extends Controller
 
     /**用户登录执行*/
     public function login_do()
-    {
+    { 
     	$data=Request::all();
-    	$info=User::where(['name'=>$data['name'],'password'=>$data['password']])->first();
-    	// dd($info);
+        // DB::connection('nginx')->enableQueryLog();
+    	$info=DB::connection('nginx')->table('user')->where(['name'=>$data['name'],'password'=>$data['password']])->first();
+        // $log = DB::connection('nginx')->getQueryLog();
+        // dd($log);
     	if (!empty($info)) {
     		Request::session()->put('user',$data['name']);
     		return redirect('/index');

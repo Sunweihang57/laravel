@@ -18,6 +18,7 @@ class IndexController extends Controller
      */
     public function file()
     {
+        $info=Request::all();
     	$data=Request::file('file')->store('uploads');
     	$info=asset('storage/'.$data);
     	dd($info);
