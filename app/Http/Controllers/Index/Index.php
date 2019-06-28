@@ -27,18 +27,11 @@ class Index extends Controller
     /**
      * 商品二次循环
      */
-    protected function handle_double($info,$cart_goods_arr=[]){
+    protected function handle_double($info){
         $i = 0;
         $j = 1;
         $tmp = [];
         $key = 0;
-        foreach($info as $k=>$v){
-            if(in_array($v['id'],$cart_goods_arr)){
-                $info[$k]['in_cart'] = 1;
-            }else{
-                $info[$k]['in_cart'] = 0;
-            }
-        }
         foreach($info as $k=>$v){
             if($i <= $j){
                 $tmp[$key][] = $v;
