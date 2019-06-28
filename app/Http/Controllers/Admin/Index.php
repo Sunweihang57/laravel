@@ -38,7 +38,12 @@ class Index extends Controller
         $file=Request::file('goods_pic')->store('uploads/goods');
         $path='storage/'.$file;
         $data['goods_pic']=$path;
-    	$res=Goods::insert($data);
+    	$res=Goods::insert([
+            'goods_name' => $data['goods_name'],
+            'goods_price' => $data['goods_price'],
+            'goods_pic' => $data['goods_pic'],
+            'add_time' => $data['add_time']
+        ]);
         if ($res) {
             return redirect('admin/index/goodsList');
         }else{
