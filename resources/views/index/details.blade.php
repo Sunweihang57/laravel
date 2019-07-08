@@ -82,7 +82,7 @@
 								<div class="order-review">
 									<div class="row">
 										<div class="col s12">
-											@foreach ($detail as $v)
+											@foreach ($detail as $k=>$v)
 											<div class="cart-details">
 												<div class="col s5">
 													<div class="cart-product">
