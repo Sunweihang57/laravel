@@ -62,7 +62,8 @@ class Order extends Controller
 
         DB::connection('nginx')->commit();
 		Cart::where('status', 1)->update(['status' => 2]);
-		$orderDetail = DB::table('order_detail')->where('oid',$oid)->get();
+		$orderDetail = DB::table('order_detail')->where('oid',$oid)->get()->toarray();
+        // dd($orderDetail[0]->goods_name);
     	return view('index/details',['oid' => $oid, 'detail' => $orderDetail, 'money' => $money]);
     }
 

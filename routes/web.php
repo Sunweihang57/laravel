@@ -23,6 +23,7 @@ Route::any('/update','userController@update');
 Route::any('/update_do','userController@update_do');
 Route::any('/search','userController@search');
 Route::any('/redis','userController@redis');
+Route::any('/wechat','WeChat\WeChat@jieru');
 
 /**微商城使用的路由*/
 //后台部分
@@ -73,3 +74,24 @@ Route::get('ceshi/student/index', 'CeShi\Student@index');
 Route::get('ceshi/student/del', 'CeShi\Student@delete');
 Route::get('ceshi/student/upd', 'CeShi\Student@update');
 Route::post('ceshi/student/upd_do', 'CeShi\Student@upd_do');
+
+//7月2号考试路由
+Route::any('login', 'Cart\Cart@login');
+Route::any('loginDo', 'Cart\Cart@loginDo');
+Route::middleware(['cart_login'])->group(function(){
+	Route::any('cart', 'Cart\Cart@index');
+	Route::any('mwcreate', 'Cart\Cart@mwcreate');
+	Route::any('cartInfo', 'Cart\Cart@cartInfo');
+	Route::any('cartInfoDo', 'Cart\Cart@cartInfoDo');
+	Route::any('list', 'Cart\Cart@list');
+});
+Route::any('mwDo', 'Cart\Cart@mwDo');
+Route::any('cindex', 'Cart\Cart@cindex');
+Route::any('come', 'Cart\Cart@come');
+Route::any('go', 'Cart\Cart@go');
+Route::any('goDo', 'Cart\Cart@goDo');
+Route::any('comeDo', 'Cart\Cart@comeDo');
+
+
+//考试B卷
+

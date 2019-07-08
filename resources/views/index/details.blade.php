@@ -82,7 +82,7 @@
 								<div class="order-review">
 									<div class="row">
 										<div class="col s12">
-											@foreach ($detail as $v)
+											@foreach ($detail as $k=>$v)
 											<div class="cart-details">
 												<div class="col s5">
 													<div class="cart-product">
@@ -109,19 +109,6 @@
 												</div>
 											</div>
 											<div class="divider"></div>
-											<!-- <div class="cart-details">
-												<div class="col s5">
-													<div class="cart-product">
-														<h5>Quantity</h5>
-													</div>
-												</div>
-												<div class="col s7">
-													<div class="cart-product">
-														<input type="text" value="1">
-													</div>
-												</div>
-											</div>											
-											<div class="divider"></div> -->
 											<div class="cart-details">
 												<div class="col s5">
 													<div class="cart-product">
