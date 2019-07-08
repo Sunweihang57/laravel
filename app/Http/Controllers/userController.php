@@ -106,4 +106,6 @@ class userController extends Controller
     	echo '列表展示页面已经浏览'.$redis->get('num').'次';
     }
 
+
+
 }
